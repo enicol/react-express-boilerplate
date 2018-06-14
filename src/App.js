@@ -5,7 +5,7 @@ import axios from 'axios'
 class App extends Component {
 
   state = {
-    error: false, // always handle error and laoding state for complexe apps
+    error: false, // always handle error and loading state for complex apps
     loading: false
   }
 
@@ -16,12 +16,20 @@ class App extends Component {
     } catch (err) {
       console.log(err)
     }
+
+    try {
+      const auth = { name: 'Default User', email: 'default@example.com' }
+      const response = await axios.post('/login', {body: auth})
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   render () {
     return (
       <div>
-        Hello0o0
+        o0o0
       </div>
     )
   }
